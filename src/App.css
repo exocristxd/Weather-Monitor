@@ -1,38 +1,232 @@
-.App {
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f5c518;
+  letter-spacing: 1px;
+}
+
+.header p {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0 auto 2rem auto;
+  max-width: 480px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  background: #1a1a1a;
+  color: #f0f0f0;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar input:focus {
+  border-color: #f5c518;
+}
+
+.search-bar input::placeholder {
+  color: #555;
+}
+
+.search-bar button {
+  padding: 0.75rem 1.5rem;
+  background: #f5c518;
+  color: #0d0d0d;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #e0b014;
+}
+
+.error-msg {
+  text-align: center;
+  color: #ff6b35;
+  background: #1a0a00;
+  border: 1px solid #ff6b3540;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  margin: 0 auto 1.5rem auto;
+  max-width: 480px;
+}
+
+.alert-banner {
+  background: #1a1000;
+  border: 1px solid #f5c51860;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #f5c518;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.weather-hero {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.weather-hero .location h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.weather-hero .location p {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.weather-hero .temp {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #f5c518;
+  font-family: monospace;
+}
+
+.weather-hero .condition {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.weather-hero .condition img {
+  width: 80px;
+  height: 80px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weather-hero .condition p {
+  color: #aaa;
+  text-transform: capitalize;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 0.4rem;
 }
 
-.App-link {
-  color: #61dafb;
+.stat-card .label {
+  font-size: 0.72rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.stat-card .value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f5c518;
+  font-family: monospace;
+}
+
+.stat-card .sub {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.map-section {
+  margin-top: 1.5rem;
+}
+
+.map-section h3 {
+  font-size: 1rem;
+  color: #f5c518;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.map-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+  height: 350px;
+  position: relative;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+  color: #f5c518;
+  font-size: 1.1rem;
+}
+.map-wrapper {
+  position: relative;
+}
+
+.map-wrapper.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  border-radius: 0;
+}
+
+.fullscreen-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+  background: #1a1a1a;
+  color: #f5c518;
+  border: 1px solid #f5c518;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.fullscreen-btn:hover {
+  background: #f5c518;
+  color: #0d0d0d;
 }
